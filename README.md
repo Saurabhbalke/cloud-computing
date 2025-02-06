@@ -71,18 +71,29 @@ B. **Start the Database using Docker Compose**
    ```sh
      docker exec -it mysql-db mysql -u root -p
      #password: admin@1
-
-3. **Repositories pull command**
+3. **tag images command**
+   ```sh
+      docker tag part_2 saurabhbalke/ell887:app
+      docker tag mysql-db saurabhbalke/ell887:db
+   
+4. **push repositories to docker hub**
+   ```sh
+      docker push saurabhbalke/ell887:app
+      docker push saurabhbalke/ell887:db
+   
+5. **Repositories pull command**
    ```sh
     docker pull saurabhbalke/ell887:app 
     docker pull saurabhbalke/ell887:db 
+6. **Repository link**
+   https://hub.docker.com/repository/docker/saurabhbalke/ell887/general
+   
 
-
-For connecting the cpp and MySQL, I have used the left side docker-compose file and submitted the (right side image_ docker-compose file in which I have updated the image as docker repositories.
+For connecting the cpp and MySQL, I have used the (left side image) docker-compose file and submitted the (right side image) docker-compose file in which I have updated the image as docker repositories(base image).
 
 ![Screenshot from 2025-02-06 15-57-27](https://github.com/user-attachments/assets/5c7db5b3-7915-4a3f-8897-d11ec134f13d) ![image](https://github.com/user-attachments/assets/90c16f5b-500a-40f5-b094-d8163e1bddfd)
 
-4. **To verify the output**
+7. **To verify the output**
    ```sh
    docker compose up
 ![image](https://github.com/user-attachments/assets/a889b770-84ab-4d42-a5c7-4f03477a0eb2)

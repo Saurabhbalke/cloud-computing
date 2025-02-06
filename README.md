@@ -8,6 +8,8 @@ This assignment consists of three parts:
 ---
 
 ## Part 1: Modifying an Existing Web Server Container
+
+### Objective
 This part modifies an Nginx container to serve a custom webpage at `http://localhost/ELL887`.
 
 ### Files Provided:
@@ -28,9 +30,13 @@ This part modifies an Nginx container to serve a custom webpage at `http://local
    [htttp://localhost/ELL887](http://localhost/ELL887)
 
    OUTPUT: "Hello world! I am Saurabh Singh Balke".
+
+![image](https://github.com/user-attachments/assets/a2e5db00-77fa-435b-b569-4765264ba100)
+
    
 ## Part 2: Creating and Pushing a Container
 
+### Objective
 This part containerizes a C++ program that prints "Hello world!! I am saurabh singh balke (2024EET2397)" and includes a MySQL database.
 
 ### Files Provided:
@@ -54,7 +60,7 @@ A. **Run the c++ program container**
 
 
 B. **Start the Database using Docker Compose**
-1. **Run the services(c++ ap + MySql database**
+1. **Run the services(c++ ap + MySql database)**
    ```sh
     docker-compose up
 
@@ -67,7 +73,36 @@ B. **Start the Database using Docker Compose**
    ```sh
    docker ps 
 
-3. **Verify the output:**
+
+## Part 3: Modifying an Existing Web Server Container
+
+### Objective
+Deploy a web server in a Kubernetes cluster using Minikube. web server runs on port 30001
+
+### Files Provided:
+- `deployment.yaml` (K8s Deployment & service for the web server)
+
+### Steps to Run:
+1. **Apply the Kubernetes configuration using:**
    ```sh
-   OUTPUT: "Hello world!! I am saurabh singh balke (2024EET2397)".
+   kubectl apply -f deployment.yaml
+
+2. **check the running pods using:**
+   ```sh
+   kubectl get pods
+   
+3. **check the service pods using (wait until webserver pod is in running state the use below cmd):**
+   ```sh
+   minikube service webserver-service
+
+![image](https://github.com/user-attachments/assets/0d000183-f0dd-4119-ab95-52a033d69e52)
+
+4. **Access the web server using:**
+   ```sh
+   [htttp://<minikube-ip>:30001](htttp://<minikube-ip>:30001)
+
+   OUTPUT: nginx web page.
+
+![Screenshot from 2025-02-06 15-19-53](https://github.com/user-attachments/assets/bea9ae8d-4378-4470-9f66-b8bd9f9c62e4)
+
    

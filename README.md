@@ -43,8 +43,8 @@ This part containerizes a C++ program that prints "Hello world!! I am saurabh si
 ### Files Provided:
 - `Dockerfile` (to create a custom Nginx container)
 - `docker-compose.yaml` (to include a MySQL database)
-- `index.html` (to display the required message)
-
+- `code.cpp` (to display the required message)
+- In docker-compose.yaml i have used docker hub repositories images that i have pushed while building container
 ### Steps to Run:
 A. **Run the c++ program container**
 1. **Build the C++ container:**
